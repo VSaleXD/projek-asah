@@ -1,0 +1,14 @@
+import { useCallback, useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { api } from '../api/client.js'
+import { Galat, Kosong, Memuat, PageTitle, StatusAksi, ambilPesan } from '../components/PageState.jsx'
+
+const hariIni = () => new Date().toLocaleDateString('en-CA', { timeZone: 'Asia/Jakarta' })
+export default function Opname() {
+  const [bahan, setBahan] = useState(null); const [tanggal, setTanggal] = useState(hariIni()); const [items, setItems] = useState([]); const [catatan, setCatatan] = useState(''); const [status, setStatus] = useState(null); const [error, setError] = useState(''); const navigate = useNavigate()
+  const muat = useCallback(() => api.get('/bahan').then((r) => { setBahan(r.data.data.filter((b) => b.aktif)); setItems(r.data.data.filter((b) => b.aktif).map((b) => ({ bahan_id: b.id, jumlah_aktual: '' }))) }).catch((e) => setError(ambilPesan(e))), [])
+  useEffect(() => { muat() }, [muat])
+  const simpan = async (e) => { e.preventDefault(); const kosong = items.some((i) => i.jumlah_aktual === '' || Number(i.jumlah_aktual) < 0); if (kosong) { setStatus({ type: 'gagal', text: 'Isi jumlah fisik semua bahan sebelum menyimpan.' }); return } setStatus({ type: 'memuat', text: 'Menyimpan cek stok...' }); try { await api.post('/opname', { tanggal, catatan, items: items.map((i) => ({ ...i, jumlah_aktual: Number(i.jumlah_aktual) })) }); setStatus({ type: 'berhasil', text: 'Cek stok tersimpan. Mengarahkan ke Belanja...' }); setTimeout(() => navigate(`/belanja?tanggal=${tanggal}`), 500) } catch (err) { setStatus({ type: 'gagal', text: ambilPesan(err) }) } }
+  if (error) return <Galat pesan={error} onUlang={muat} />; if (!bahan) return <Memuat />; if (!bahan.length) return <Kosong>Belum ada bahan aktif.</Kosong>
+  return <section><PageTitle>Cek stok malam</PageTitle><form className="card form-card" onSubmit={simpan}><label>Tanggal cek<input type="date" value={tanggal} onChange={(e) => setTanggal(e.target.value)} required /></label><div className="opname-list">{items.map((item, i) => { const b = bahan[i]; const value = Number(item.jumlah_aktual); const menipis = item.jumlah_aktual !== '' && value < Number(b.stok_minimum); return <label className={menipis ? 'is-low' : ''} key={item.bahan_id}><span>{b.nama}<small>Perkiraan {b.stok} {b.satuan} · minimum {b.stok_minimum}</small></span><input type="number" inputMode="decimal" min="0" step="any" value={item.jumlah_aktual} onChange={(e) => { const next = [...items]; next[i].jumlah_aktual = e.target.value; setItems(next) }} placeholder="Jumlah fisik" />{menipis && <em>▲ Di bawah minimum</em>}</label> })}</div><label>Catatan (opsional)<textarea value={catatan} onChange={(e) => setCatatan(e.target.value)} rows="3" /></label><button className="button">Simpan cek stok</button><StatusAksi status={status} /></form></section>
+}
