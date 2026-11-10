@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import logo from '../assets/logo.jpg'
 
 const links = [
   ['/', 'Stok'],
@@ -17,7 +18,7 @@ export default function Navbar() {
     <header className="site-header" >  
       <div className="header-inner">
         <NavLink className="brand" to="/" aria-label="Stok Dapur">
-          <img src="src/assets/logo.jpg" alt="Stok Dapur" className="logo" />
+          <img src={logo} alt="Stok Dapur" className="logo" />
           <span>Stok Dapur</span>
         </NavLink>
         <button
