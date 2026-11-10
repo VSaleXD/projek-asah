@@ -12,6 +12,7 @@ docs
 _ref
 dist
 dist-ssr
+AGENTS.md
 *.local
 
 # Editor directories and files
