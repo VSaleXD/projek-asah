@@ -4,7 +4,6 @@
     <h1>Aplikasi Stok Ale's Place Cipoho</h1>
     <p><strong>Projek Akhir Dicoding Asah</strong><br/>
     Departemen Ilmu Komputer - IPB University<br/>
-    Target Deployment: <a href="https://alesplacecipoho.web.id">
     </a></p>
     <p>Disusun oleh:</p>
     <table align="center" style="margin-top: 1rem; text-align: left; border-collapse: collapse;">
@@ -23,39 +22,88 @@
 
 # Stok Dapur
 
-Frontend Stok Dapur berada langsung di root workspace (`src/`, `App.jsx`, dan
-`main.jsx`). Backend Express berada di [`backend/`](backend/).
+## Informasi Proyek
 
-## Menjalankan lokal
+Stok Dapur adalah aplikasi web untuk digitalisasi pencatatan stok bahan makanan
+di Ale's Place Cipoho, Sukabumi.
 
-Jalankan dua proses dari terminal terpisah:
+| Keterangan | Isi |
+|---|---|
+| ID Tim Capstone | A26-CS218 |
+| Nama UMKM | Ale's Place Cipoho |
+| Bidang | Kuliner |
+| Judul Use Case | Digitalisasi Pencatatan Stok Bahan Makanan untuk Mengurangi Kesalahan Pemrosesan Manual |
+| Tautan Use Case | https://ipb.link/use-case-ales-place |
 
-```bash
-npm run dev
-cd backend
-npm run dev
-```
+## Ringkasan
 
-Frontend meneruskan `/api` ke `http://localhost:3000` melalui proxy Vite.
-Kontrak endpoint tersedia di [`docs/API.md`](docs/API.md).
+Ale's Place Cipoho merupakan restoran masakan Jepang di Kota Sukabumi.
+Pengelolaan dan pemantauan stok bahan baku masih dilakukan melalui pemeriksaan
+fisik dan pencatatan manual menggunakan kertas setiap malam. Proses tersebut
+memerlukan waktu, berisiko menimbulkan kesalahan pencatatan, dan menyulitkan
+pemilik dalam memantau kondisi persediaan.
 
-Proyek ini tidak memakai Supabase atau BaaS sejenis. Jangan commit `.env`,
-`_ref/`, atau data nyata.
+Stok Dapur membantu staf operasional dan pemilik mencatat bahan baku, mengelola
+resep menu, mencatat penjualan, melakukan cek stok malam, serta membuat daftar
+belanja berdasarkan kondisi persediaan. Stok dihitung menggunakan buku besar
+pergerakan stok. Penjualan mengurangi stok berdasarkan resep menu, sedangkan cek
+fisik malam mencatat koreksi jika terdapat perbedaan antara stok sistem dan stok
+aktual.
 
-## Konfigurasi produksi
+## Cakupan Fitur
 
-Frontend memakai `VITE_API_URL` untuk alamat backend, misalnya:
+- Dashboard stok dan status bahan aman/menipis.
+- Master data bahan, menu, dan resep.
+- Pencatatan penjualan berdasarkan resep.
+- Peringatan menu yang belum memiliki resep.
+- Cek stok malam dan koreksi stok.
+- Rekomendasi daftar belanja.
+- Penandaan bahan yang sudah dibeli.
+- Berbagi daftar belanja melalui WhatsApp dan cetak.
+- Riwayat pergerakan stok dengan filter.
+- Satu kode akses staf bersama.
 
-```env
-VITE_API_URL=https://api.example.com/api/v1
-```
+Prediksi pemakaian disiapkan untuk tim Data Science melalui endpoint API yang
+tersedia. Model prediksi dan fitur AI tidak dibuat oleh bagian Full-Stack.
 
-Salin [`.env.example`](.env.example) menjadi `.env` bila perlu. File `.env`
-tidak boleh di-commit.
+## Di Luar Scope
 
-Backend memakai `DATABASE_URL`, `CORS_ORIGIN`, dan `KODE_AKSES` dari
-`backend/.env` (lihat [`backend/.env.example`](backend/.env.example)).
-Isi `CORS_ORIGIN` dengan URL frontend produksi. Jangan deploy sebelum
-`KODE_AKSES` diisi. Untuk Cloudflare Pages/Netlify, build command adalah
-`npm run build`, publish directory `dist`, dan file `public/_redirects`
-menjaga routing React tetap berjalan. Deploy belum dilakukan dari workspace ini.
+- Integrasi langsung ke NutaCloud.
+- Supabase atau BaaS sejenis.
+- Chatbot.
+- Reservasi atau fitur dine-in.
+- Data pribadi pelanggan atau staf.
+- Marketplace.
+
+## Arsitektur
+
+Frontend berada langsung di root workspace:
+
+- `src/`
+- `App.jsx`
+- `main.jsx`
+
+Backend Express berada di `backend/`.
+
+Teknologi yang digunakan:
+
+- Vite dan React.
+- React Router.
+- Axios.
+- CSS biasa.
+- Express 4 dengan JavaScript ESM.
+- PostgreSQL/Neon.
+- Joi untuk validasi request.
+
+Semua request frontend harus melalui `src/api/client.js`. Saat development,
+proxy Vite meneruskan `/api` ke `http://localhost:3000`.
+
+## Struktur Penting
+
+- `src/App.jsx` — routing aplikasi.
+- `src/api/client.js` — Axios client dan pesan error.
+- `src/components/` — komponen navigasi dan status halaman.
+- `src/pages/` — halaman aplikasi.
+- `src/style/japanese.css` — styling visual aplikasi.
+- `backend/src/domain/stok.js` — aturan domain stok.
+- `backend/src/routes/` — endpoint API.

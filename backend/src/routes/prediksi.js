@@ -15,7 +15,6 @@ const skemaKirim = Joi.object({
     .required(),
 });
 
-// Dipakai tim Data Science untuk mengirim prediksi pemakaian bahan per hari
 r.post("/", validate(skemaKirim), asyncHandler(async (req, res) => {
   const { model_versi, data } = req.body;
   await tx(async (c) => {

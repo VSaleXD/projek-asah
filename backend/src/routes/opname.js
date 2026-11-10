@@ -17,10 +17,6 @@ const skema = Joi.object({
     .required(),
 });
 
-/**
- * Cek stok malam. Selisih antara hitungan fisik dan estimasi sistem dicatat sebagai pergerakan 'koreksi'.
- * Menyimpan ulang pada tanggal yang sama menimpa cek sebelumnya. Hasilnya: daftar belanja untuk besok.
- */
 r.post("/", validate(skema), asyncHandler(async (req, res) => {
   const { tanggal, catatan, items } = req.body;
 
@@ -29,7 +25,6 @@ r.post("/", validate(skema), asyncHandler(async (req, res) => {
     let opnameId;
     if (lama.rowCount) {
       opnameId = lama.rows[0].id;
-      // buang dampak cek sebelumnya (koreksi + pembelian dari daftar belanja lama)
       await c.query(
         "delete from stok_movement where referensi_id = $1 or referensi_id in (select id from belanja_item where opname_id = $1)",
         [opnameId],
@@ -56,7 +51,6 @@ r.post("/", validate(skema), asyncHandler(async (req, res) => {
       }
     }
 
-    // Rekomendasi belanja untuk hari setelah tanggal cek
     const besok = (await c.query("select ($1::date + 1)::text as d", [tanggal])).rows[0].d;
     const bahan = await daftarBahanStok(c, besok);
     const rekomendasi = rekomendasiBelanja(bahan.map((b) => ({ bahan: b, stok: b.stok, prediksi: b.prediksi })));

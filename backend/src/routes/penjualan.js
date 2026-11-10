@@ -24,7 +24,6 @@ r.get("/", asyncHandler(async (_req, res) => {
   res.json({ data: rows });
 }));
 
-// Catat penjualan -> stok bahan berkurang otomatis menurut resep
 r.post("/", validate(buat), asyncHandler(async (req, res) => {
   const { tanggal: tgl, items } = req.body;
   const hasil = await tx(async (c) => {

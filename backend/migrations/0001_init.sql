@@ -1,5 +1,3 @@
--- Skema awal. PostgreSQL 14+ (Neon memenuhi).
-
 create table bahan (
   id uuid primary key default gen_random_uuid(),
   nama text not null unique,
@@ -20,7 +18,6 @@ create table menu (
   aktif boolean not null default true
 );
 
--- Resep: bahan apa dan berapa banyak untuk 1 porsi menu.
 create table resep (
   menu_id uuid not null references menu(id) on delete cascade,
   bahan_id uuid not null references bahan(id),
@@ -51,7 +48,6 @@ create table opname (
 
 create type tipe_pergerakan as enum ('penjualan', 'pembelian', 'koreksi', 'buang');
 
--- Buku besar stok. Stok saat ini = SUM(jumlah) per bahan.
 create table stok_movement (
   id uuid primary key default gen_random_uuid(),
   bahan_id uuid not null references bahan(id),
@@ -87,7 +83,6 @@ create table belanja_item (
   unique (opname_id, bahan_id)
 );
 
--- Diisi tim Data Science (lihat docs/API.md dan docs/DATA-DICTIONARY.md).
 create table prediksi_pemakaian (
   tanggal date not null,
   bahan_id uuid not null references bahan(id),

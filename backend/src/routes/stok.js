@@ -13,7 +13,6 @@ const skemaPergerakan = Joi.object({
   limit: Joi.number().integer().min(1).max(500).default(100),
 });
 
-// Riwayat pergerakan stok
 r.get("/pergerakan", validate(skemaPergerakan, "query"), asyncHandler(async (req, res) => {
   const { bahan_id, dari, sampai, limit } = req.query;
   const { rows } = await query(

@@ -26,7 +26,6 @@ const buat = Joi.object({
 });
 const ubah = Joi.object(dasar).min(1);
 
-// Daftar bahan + stok saat ini + status
 r.get("/", asyncHandler(async (_req, res) => {
   const rows = await daftarBahanStok({ query });
   res.json({

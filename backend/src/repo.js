@@ -1,6 +1,3 @@
-// Query yang dipakai bersama beberapa route.
-
-/** Semua bahan + stok saat ini (SUM pergerakan) + prediksi untuk tanggal tertentu (opsional). */
 export async function daftarBahanStok(db, tanggalPrediksi = null) {
   const { rows } = await db.query(
     `select b.id, b.nama, b.satuan, b.kategori, b.stok_minimum, b.stok_target, b.ukuran_kemasan, b.aktif,

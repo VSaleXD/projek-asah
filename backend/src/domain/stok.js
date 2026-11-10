@@ -1,24 +1,15 @@
-// Logika bisnis murni (tanpa database). Semua aturan stok ada di sini dan wajib punya tes.
-
 const EPS = 1e-9;
 const bulatkan = (n) => Math.round(n * 1000) / 1000;
 
-/** Bahan "menipis" bila stok DI BAWAH minimum. (Asumsi dari wawancara; konfirmasi ke owner.) */
 export function statusStok(stok, minimum) {
   return stok < minimum ? "menipis" : "aman";
 }
 
-/** Jumlah kemasan yang dibeli untuk menutup kekurangan, dibulatkan ke atas. */
 export function hitungKemasan(kekurangan, ukuranKemasan) {
   if (kekurangan <= 0 || ukuranKemasan <= 0) return 0;
   return Math.ceil(kekurangan / ukuranKemasan - EPS);
 }
 
-/**
- * Pemakaian bahan dari penjualan menu.
- * @param {{menu_id:string, qty:number}[]} items
- * @param {{menu_id:string, bahan_id:string, jumlah:number}[]} resep
- */
 export function pemakaianDariPenjualan(items, resep) {
   const perMenu = new Map();
   for (const r of resep) {
@@ -44,12 +35,6 @@ export function pemakaianDariPenjualan(items, resep) {
   };
 }
 
-/**
- * Rekomendasi belanja untuk operasional besok.
- * Perlu dibeli bila stok < minimum, ATAU stok setelah pemakaian prediksi besok < minimum.
- * Target = max(stok_target, prediksi + minimum). Tanpa prediksi, hanya aturan batas minimum yang berlaku.
- * @param {{bahan:{id:string,nama:string,satuan:string,stok_minimum:number,stok_target:number,ukuran_kemasan:number,aktif:boolean}, stok:number, prediksi?:number}[]} daftar
- */
 export function rekomendasiBelanja(daftar) {
   const hasil = [];
   for (const { bahan, stok, prediksi = 0 } of daftar) {

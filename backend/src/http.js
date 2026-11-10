@@ -18,7 +18,6 @@ export const validate = (schema, sumber = "body") => (req, _res, next) => {
   next();
 };
 
-/** Terjemahkan galat PostgreSQL menjadi pesan yang jelas untuk pengguna. */
 export function errorHandler(err, _req, res, _next) {
   let { status, kode, message: pesan, detail } = err;
   if (!status) {

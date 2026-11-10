@@ -17,7 +17,6 @@ export function buatApp() {
 
   app.get("/api/v1/health", (_req, res) => res.json({ data: { status: "ok" } }));
 
-  // Kode akses staf (kosong = tanpa pengamanan, hanya untuk lokal)
   app.use("/api/v1", (req, _res, next) => {
     const kode = process.env.KODE_AKSES;
     if (kode && req.get("x-kode-akses") !== kode) {

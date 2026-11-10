@@ -8,7 +8,6 @@ const r = Router();
 const skemaQuery = Joi.object({ tanggal: Joi.string().pattern(/^\d{4}-\d{2}-\d{2}$/) });
 const skemaUbah = Joi.object({ sudah_dibeli: Joi.boolean().required() });
 
-// Daftar belanja dari cek stok pada tanggal tertentu (default: cek stok terakhir)
 r.get("/", validate(skemaQuery, "query"), asyncHandler(async (req, res) => {
   const { rows } = await query(
     `select bi.id, o.tanggal as tanggal_cek, b.id as bahan_id, b.nama, b.satuan,
@@ -23,7 +22,6 @@ r.get("/", validate(skemaQuery, "query"), asyncHandler(async (req, res) => {
   res.json({ data: rows });
 }));
 
-// Tandai sudah dibeli -> stok bertambah (pergerakan 'pembelian'); batalkan -> stok dikembalikan
 r.patch("/:id", validate(skemaUbah), asyncHandler(async (req, res) => {
   const hasil = await tx(async (c) => {
     const { rows } = await c.query("select * from belanja_item where id = $1 for update", [req.params.id]);

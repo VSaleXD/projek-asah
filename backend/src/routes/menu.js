@@ -38,7 +38,6 @@ r.post("/", validate(buat), asyncHandler(async (req, res) => {
   res.status(201).json({ data: rows[0] });
 }));
 
-// Ganti seluruh resep satu menu
 r.put("/:id/resep", validate(resepSkema), asyncHandler(async (req, res) => {
   await tx(async (c) => {
     const ada = await c.query("select 1 from menu where id = $1", [req.params.id]);

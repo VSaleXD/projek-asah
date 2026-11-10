@@ -1,5 +1,3 @@
-// Tes integrasi: butuh database KOSONG khusus tes. Semua tabel dikosongkan di awal.
-//   DATABASE_URL_TEST=postgres://user:pass@localhost:5432/stok_test npm test
 import { afterAll, beforeAll, describe, expect, it } from "vitest";
 import request from "supertest";
 
