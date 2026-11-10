@@ -12,6 +12,10 @@ const PRESS =
 function Hanko({ children }) {
   return (
     <div className="absolute -top-3 -right-3 z-10 flex h-12 w-12 items-center justify-center rounded-full border-2 border-[#1A1A1A] bg-[#F0B429] text-xs font-extrabold text-[#1A1A1A]">
+      {children}
+    </div>
+  );
+}
 
 // ---------- Pemisah bergelombang (seigaiha sederhana) ----------
 export function WaveDivider() {

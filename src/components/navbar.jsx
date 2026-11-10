@@ -14,10 +14,10 @@ const links = [
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
   return (
-    <header className="site-header">
+    <header className="site-header" >  
       <div className="header-inner">
         <NavLink className="brand" to="/" aria-label="Stok Dapur">
-          <span className="hanko">SD</span>
+          <img src="src/assets/Logo.jpg" alt="Stok Dapur" className="logo" />
           <span>Stok Dapur</span>
         </NavLink>
         <button
