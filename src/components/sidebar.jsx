@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import logo from '../assets/logo.jpg'
+import logo from '../assets/Logo.jpg'
 
 const groups = [
   { title: '', links: [['/', 'Dashboard']] },
