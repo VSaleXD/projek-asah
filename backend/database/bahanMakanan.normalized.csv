@@ -1,0 +1,173 @@
+pemasok,nama,harga,ukuran_kemasan,satuan,harga_satuan
+SAYUR,Bawang Bombay,30000,1000,gram,30
+SAYUR,Bawang Daun,20000,1000,gram,20
+SAYUR,Bawang Putih,40000,1000,gram,40
+SAYUR,Beras,330000,25000,gram,13
+SAYUR,Cengek Domba,5000,100,gram,50
+SAYUR,Daun Jeruk,2000,20,gram,100
+SAYUR,Es Batu,23000,19000,liter,1.211
+SAYUR,Galon,5000,19000,liter,0.263
+SAYUR,Gas,77000,5500,gram,14
+SAYUR,Jahe,5000,100,gram,50
+SAYUR,Jagung Manis,5000,500,gram,10
+SAYUR,Jagung Semi,15000,500,gram,30
+SAYUR,Jeruk Peras,12000,1000,gram,12
+SAYUR,Kembang Kol,32000,1000,gram,32
+SAYUR,Kol,12000,1000,gram,12
+SAYUR,Lemon Buah,20000,1000,gram,20
+SAYUR,Mentimun,12000,1000,gram,12
+SAYUR,Pakcoy Hidrofonik,20000,1000,gram,20
+SAYUR,Paprika,65000,500,gram,130
+SAYUR,Pisang Galek,14000,1000,gram,14
+SAYUR,Roti Burger Black,12000,6,pcs,2000
+SAYUR,Roti Burger Red,12000,6,pcs,2000
+SAYUR,Roti Tawar,14000,9,pcs,1556
+SAYUR,Salada,6000,100,gram,60
+SAYUR,Seledri,14000,250,gram,56
+SAYUR,Strawberry Buah,12000,12,gram,1000
+SAYUR,Sawi Putih,8000,1000,gram,8
+SAYUR,Tahu,7000,10,pcs,700
+SAYUR,Telur,335000,220,pcs,1523
+SAYUR,Tomat,16000,1000,gram,16
+SAYUR,Terong Ungu,8000,1000,gram,8
+SAYUR,Tulang Balung,30000,1500,gram,20
+SAYUR,Wortel,20000,1000,gram,20
+TOKO HAI & FEI,Antaka,5000,100,gram,50
+TOKO HAI & FEI,Backing Powder,4500,45,gram,100
+TOKO HAI & FEI,Biji Selasih,30000,250,gram,120
+TOKO HAI & FEI,Buble,27000,1000,gram,27
+TOKO HAI & FEI,Cabe Bubuk,68000,1000,gram,68
+TOKO HAI & FEI,Caramel Topping,30000,350,gram,86
+TOKO HAI & FEI,Cengkeh,25000,100,gram,250
+TOKO HAI & FEI,Cetakan Puding,7500,50,pcs,150
+TOKO HAI & FEI,Chocochip,16000,250,gram,64
+TOKO HAI & FEI,Cocoa Powder,15000,45,gram,333
+TOKO HAI & FEI,Cuka Beras,24000,600,ml,40
+TOKO HAI & FEI,Cup Gelas,12000,50,pcs,240
+TOKO HAI & FEI,Curry Block,280000,1000,gram,280
+TOKO HAI & FEI,Dairy Charm,10000,500,gram,20
+TOKO HAI & FEI,Susus Dancow Full Cream,42000,400,gram,105
+TOKO HAI & FEI,Diamond,14000,1000,ml,14
+TOKO HAI & FEI,Elmer Anggur,200000,5000,gram,40
+TOKO HAI & FEI,Elmer Buble Gum,275000,5000,gram,55
+TOKO HAI & FEI,Elmer Chocomaltine,320000,5000,gram,64
+TOKO HAI & FEI,Elmer Cokelat,230000,5000,gram,46
+TOKO HAI & FEI,Elmer Greentea,220000,5000,gram,44
+TOKO HAI & FEI,Fn,14000,380,gram,37
+TOKO HAI & FEI,Garam,7500,500,gram,15
+TOKO HAI & FEI,Gula Tepung,7500,350,gram,21
+TOKO HAI & FEI,Ice Cream Greentea,355000,8000,ml,44
+TOKO HAI & FEI,Ice Cream Manngo,180000,8000,ml,23
+TOKO HAI & FEI,Ice Cream Vanila,155000,8000,ml,19
+TOKO HAI & FEI,Kacang Tanah,15000,250,gram,60
+TOKO HAI & FEI,Kecap Manis,18000,275,ml,65
+TOKO HAI & FEI,Keju Cedar,95000,1000,gram,95
+TOKO HAI & FEI,Keju Mozarella,120000,1000,gram,120
+TOKO HAI & FEI,Kertas Roti,8000,5,pcs,1600
+TOKO HAI & FEI,Lada Hitam,40000,250,gram,160
+TOKO HAI & FEI,Leci Buah,22000,16,pcs,1375
+TOKO HAI & FEI,Macha Fure,80000,100,gram,800
+TOKO HAI & FEI,Maizena,14000,1000,gram,14
+TOKO HAI & FEI,Margarin,26000,1000,gram,26
+TOKO HAI & FEI,Marjan Leci,20000,460,ml,43
+TOKO HAI & FEI,Marjan Strawberry,20000,460,ml,43
+TOKO HAI & FEI,Mayonaise,27000,1000,gram,27
+TOKO HAI & FEI,Merica,160000,1000,gram,160
+TOKO HAI & FEI,Millac Gold,75000,1000,ml,75
+TOKO HAI & FEI,Miso,165000,1000,gram,165
+TOKO HAI & FEI,Nori Lembar,35000,10,pcs,3500
+TOKO HAI & FEI,Oreo Bubuk,70000,1000,gram,70
+TOKO HAI & FEI,Pasta Strawberry,7500,60,ml,125
+TOKO HAI & FEI,Pasta Taro,26000,100,gram,260
+TOKO HAI & FEI,Perisa Vanilla,5000,20,gram,250
+TOKO HAI & FEI,Pewarna Biru,5000,30,ml,167
+TOKO HAI & FEI,Plastik Klip,5000,100,pcs,50
+TOKO HAI & FEI,Royko Ayam,38000,1000,gram,38
+TOKO HAI & FEI,Sagu Mutiara,36000,1000,gram,36
+TOKO HAI & FEI,Sagu Tani/aci,20000,1000,gram,20
+TOKO HAI & FEI,Sanquik Lemon,24000,330,gram,73
+TOKO HAI & FEI,Sanquik Mangga,60000,840,ml,71
+TOKO HAI & FEI,Saos Cabe,18000,1000,gram,18
+TOKO HAI & FEI,Saos Keju,30000,500,gram,60
+TOKO HAI & FEI,Saos Sacset Cabe,6000,24,pcs,250
+TOKO HAI & FEI,Saos Sacset Tomat,6000,24,pcs,250
+TOKO HAI & FEI,Saos Teriaki,18000,275,ml,65
+TOKO HAI & FEI,Saos Tiram Panda,42000,770,gram,55
+TOKO HAI & FEI,Saos Tomat,13000,1000,gram,13
+TOKO HAI & FEI,Sedotan Hitam Besar,40000,500,pcs,80
+TOKO HAI & FEI,Sedotan Hitam Kecil,22000,25,pcs,880
+TOKO HAI & FEI,Sendok Miruku,5000,25,pcs,200
+TOKO HAI & FEI,Soun,7000,250,gram,28
+TOKO HAI & FEI,Susu Bubuk,42000,500,gram,84
+TOKO HAI & FEI,Tbm,5000,100,gram,50
+TOKO HAI & FEI,Teh Tubruk Goalpara,14500,250,gram,58
+TOKO HAI & FEI,Tepung Roti,20000,1000,gram,20
+TOKO HAI & FEI,Terigu,8000,1000,gram,8
+TOKO HAI & FEI,Thai Tea,52000,400,gram,130
+TOKO HAI & FEI,Thausand Island,27000,1000,gram,27
+TOKO HAI & FEI,Tusuk Sate,10000,100,pcs,100
+TOKO HAI & FEI,Wadah Miruku,70000,100,pcs,700
+TOKO HAI & FEI,Wijen,9000,250,gram,36
+TOKO HAI & FEI,Miso,60000,1000,gram,60
+YOGYA SUPERINDO ALFA,Air Mineral,37000,24,bottle,1542
+YOGYA SUPERINDO ALFA,Buah Mangga,35000,1000,gram,35
+YOGYA SUPERINDO ALFA,Daun Mint,2950,150,gram,20
+YOGYA SUPERINDO ALFA,Gula Pasir,13000,1000,gram,13
+YOGYA SUPERINDO ALFA,Gurita,150000,1000,gram,150
+YOGYA SUPERINDO ALFA,Hi Cook,23000,230,gram,100
+YOGYA SUPERINDO ALFA,Jamur Enoki,6000,100,gram,60
+YOGYA SUPERINDO ALFA,Letuce,17000,500,gram,34
+YOGYA SUPERINDO ALFA,Minyak Goreng,30000,2000,liter,15
+YOGYA SUPERINDO ALFA,Parsley,5000,150,gram,33
+YOGYA SUPERINDO ALFA,Sprite,14000,1500,liter,9
+YOGYA SUPERINDO ALFA,Tofu,8000,250,gram,32
+YOGYA SUPERINDO ALFA,Yakult,10000,5,ml,2000
+YOGYA SUPERINDO ALFA,Yoghurt,20000,1000,ml,20
+Toko ACI,Baso Salmon,27000,500,gram,54
+Toko ACI,Chikuwa,54500,1000,gram,55
+Toko ACI,Cincau,4000,500,gram,8
+Toko ACI,Crab Stick,47500,1000,gram,48
+Toko ACI,Daging Burger,35000,10,pcs,3500
+Toko ACI,Kopi,55000,250,gram,220
+Toko ACI,Kwetiaw,5000,500,gram,10
+Toko ACI,Mie,7000,500,gram,14
+Toko ACI,Otak-otak,47500,1000,pcs,48
+Toko ACI,Siomay,33000,10,pcs,3300
+Toko ACI,Smoked Beef,45000,10,pcs,4500
+Toko ACI,Sosis Bp,38000,6,pcs,6333
+Toko ACI,Sosis Cheese,37000,6,pcs,6167
+Toko ACI,Sosis Isi 6,33000,6,pcs,5500
+Toko ACI,Sosis Isi 7,35000,7,pcs,5000
+Om Wega,Ao Nori,400000,500,gram,800
+Om Wega,Brownies,70000,16,pcs,4375
+Om Wega,Bumbu Cabe,35000,500,ml,70
+Om Wega,Bumbu Hotplate,93000,1000,gram,93
+Om Wega,Bumbu Marinasi,145000,1000,gram,145
+Om Wega,Bumbu Kering,64000,1000,gram,64
+Om Wega,Bumbu Minyak,95000,1000,gram,95
+Om Wega,Cau Katsu,13000,365,gram,36
+Om Wega,Chicken Katsu,89000,1000,gram,89
+Om Wega,Ekado,3600,1,pcs,3600
+Om Wega,Chicken Egg Roll,1400,1,pcs,1400
+Om Wega,Powder Choco Prime,140000,1000,gram,130
+Om Wega,Powder Greentea,160000,1000,gram,160
+Om Wega,Katsuobushi,350000,1000,gram,350
+Om Wega,Powder Pink Velvet,150000,1000,gram,150
+Om Wega,Powder Candil,35000,1000,gram,35
+Om Wega,Puding Coklat,130000,1000,gram,130
+Om Wega,Puding Greentea,130000,1000,gram,130
+Om Wega,Puding Manggo,130000,1000,gram,130
+Om Wega,Puding Taro,130000,1000,gram,130
+Om Wega,Sambel,9000,300,ml,30
+Om Wega,Saus Takoyaki,25000,250,ml,100
+Om Wega,Smotis,120000,1000,gram,120
+Om Wega,Soyu,60000,1000,gram,60
+Om Wega,Sweet Takoyaki,5000,125,gram,40
+Om Wega,Powder Takoyaki,8000,280,gram,29
+Om Wega,Teh Ocha,65000,200,gram,325
+Om Wega,Vanilla,130000,1000,gram,130
+Om Wega,Garpu Plastik,5000,25,pcs,200
+MITRA DAGING,Daging Sapi,95000,1000,gram,95
+MITRA DAGING,French Fries - Shoestring,62500,2500,gram,25
+MITRA DAGING,Daging Sirloin,130000,1000,gram,130
+MITRA DAGING,Ayam Fillet (dada),50000,1000,gram,48

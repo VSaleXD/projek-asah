@@ -1,5 +1,5 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
-import Navbar from './components/navbar.jsx'
+import Sidebar from './components/sidebar.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import Bahan from './pages/Bahan.jsx'
 import Menu from './pages/Menu.jsx'
@@ -10,10 +10,16 @@ import Riwayat from './pages/Riwayat.jsx'
 import Login from './pages/Login.jsx'
 import './style/japanese.css'
 
-export default function App() {
+function RuteTerlindungi() {
+  const sudahMasuk = Boolean(sessionStorage.getItem('kode_akses'))
+
+  if (!sudahMasuk) {
+    return <Navigate to="/masuk" replace />
+  }
+
   return (
-    <BrowserRouter>
-      <Navbar />
+    <div className="app-layout">
+      <Sidebar />
       <main>
         <Routes>
           <Route path="/" element={<Dashboard />} />
@@ -23,10 +29,20 @@ export default function App() {
           <Route path="/opname" element={<Opname />} />
           <Route path="/belanja" element={<Belanja />} />
           <Route path="/riwayat" element={<Riwayat />} />
-          <Route path="/masuk" element={<Login />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
+    </div>
+  )
+}
+
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/masuk" element={<Login />} />
+        <Route path="/*" element={<RuteTerlindungi />} />
+      </Routes>
     </BrowserRouter>
   )
 }

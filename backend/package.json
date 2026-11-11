@@ -12,6 +12,7 @@
     "migrate": "node scripts/migrate.js",
     "seed": "node scripts/seed.js",
     "import:menu": "node scripts/import-menu.js",
+    "import:bahan": "node scripts/import-bahan.js",
     "test": "vitest run"
   },
   "dependencies": {
